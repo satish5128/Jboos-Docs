@@ -1,0 +1,11 @@
+--> strings /etc/httpd/modules/mod_jk.so |grep -i mod_jk
+ 	(to check current version of mod_jk)
+--> cd /opt/mod_jk/
+--> Download latest version from : http://mirrors.wuchna.com/apachemirror/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.46-src.tar.gz
+--> tar xvzf tomcat-connectors-1.2.46-src.tar.gz
+--> cd tomcat-connectors-1.2.46-src/native/
+--> ./configure --with-apxs=/usr/bin/apxs
+--> make
+--> libtool --finish /usr/lib64/httpd/modules
+--> make install
+--> Verify version again : strings /etc/httpd/modules/mod_jk.so |grep -i mod_jk
